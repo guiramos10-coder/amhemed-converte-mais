@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-turq: #14b88f;
+
+  --font-display: "Outfit", system-ui, sans-serif;
+  --font-body: "Outfit", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.75rem;
+
+  --background: oklch(0.985 0.005 240);
+  --foreground: oklch(0.25 0.04 250);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.25 0.04 250);
+  --primary: oklch(0.37 0.07 245);
+  --primary-foreground: oklch(0.98 0.005 240);
+  --muted: oklch(0.96 0.008 240);
+  --muted-foreground: oklch(0.50 0.03 250);
+  --accent: oklch(0.67 0.14 168);
+  --accent-foreground: oklch(0.98 0.005 0);
+  --border: oklch(0.92 0.01 240);
+  --input: oklch(0.92 0.01 240);
+  --ring: oklch(0.67 0.14 168);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    margin: 0;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: linear-gradient(180deg, #1e3a5f 0%, #274a72 40%, #2d5580 100%);
+  }
+  .gradient-cta {
+    background: linear-gradient(135deg, #14b88f 0%, #17c99c 100%);
+  }
+  .gradient-dark-section {
+    background: linear-gradient(135deg, #1e3a5f 0%, #274a72 60%, #1e3a5f 100%);
+  }
+  .text-turq {
+    color: #14b88f;
+  }
+  .hero-overlay {
+    background: linear-gradient(180deg, rgba(30,58,95,0.92) 0%, rgba(39,74,114,0.88) 100%);
+  }
+}
